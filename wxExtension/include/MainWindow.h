@@ -1,11 +1,10 @@
 #pragma once
 
-#include "wx/wx.h"
-#include "string.h"
+#include <wx/wx.h>
 
 class MainWindow : public wxFrame {
 public:
-	const std::string caption = "TestWindow";
+	const wxString caption = "TestWindow";
 
 	MainWindow();
 

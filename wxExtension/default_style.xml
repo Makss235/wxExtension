@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<style name="default">
+  <font name="main_font"></font>
+
+  <widget type="button" name="some_button">
+    <part type="border" name="body">
+      <state name="normal">
+        <set type="colour" property="background_colour" value="@common_background_colour"/>
+        <set type="colour" property="foreground_colour" value="@common_foreground_colour"/>
+        <set type="colour" property="border_colour" value="@common_background_colour"/>
+        <set type="corner_radius" property="corner_radius" value="5"/>
+        <set type="thickness" property="border_thickness" value="1"/>
+        <set type="font" property="font" value="@main_font"/>
+      </state>
+      <state name="mouse_enter">
+        <set type="colour" property="background_colour" value="@mouse_enter_colour"/>
+        <set type="colour" property="foreground_colour" value="@common_foreground_colour"/>
+        <set type="colour" property="border_colour" value="@common_background_colour"/>
+        <set type="corner_radius" property="corner_radius" value="5"/>
+        <set type="thickness" property="border_thickness" value="1"/>
+        <set type="font" property="font" value="@main_font"/>
+      </state>
+      <state name="mouse_down">
+        <set type="colour" property="background_colour" value="@mouse_down_colour"/>
+        <set type="colour" property="foreground_colour" value="@common_foreground_colour"/>
+        <set type="colour" property="border_colour" value="@common_background_colour"/>
+        <set type="corner_radius" property="corner_radius" value="5"/>
+        <set type="thickness" property="border_thickness" value="1"/>
+        <set type="font" property="font" value="@main_font"/>
+      </state>
+    </part>
+  </widget>
+</style>

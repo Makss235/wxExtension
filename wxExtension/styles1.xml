@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<properties>
+	<set name="background-color" value="#FFFFFF"/>
+	<set name="font-family" value="Segoe UI"/>
+	<set name="font-size" value="14"/>
+	<set name="font-weight" value="normal"/>
+	<set name="border-width" value="1"/>
+	<set name="border-color" value="#005A9E"/>
+	<set name="border-style" value="solid"/>
+	<set name="border-radius" value="4"/>
+	<set name="padding" value="8"/>
+	<set name="margin" value="4"/>
+	<set name="min-width" value="80"/>
+	<set name="min-height" value="32"/>
+</properties>

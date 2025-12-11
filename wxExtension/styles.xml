@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<style name="default">
+  <font name="mainFont">
+    <set property="fontWeight" value="MEDIUM"/>
+	<set property="fontSize" value="12"/>
+  </font>
+
+  <widget type="button" name="stdButton">
+    <state name="normal">
+      <element type="border" name="body">
+        <set type="cornerRadius" property="cornerRadius" value="5"/>
+        <set type="thickness" property="borderThickness" value="0"/>
+        <set type="font" property="font">
+          <font>
+            <set property="fontWeight" value="ExtraBOLD"/>
+          </font>
+        </set>
+      </element>
+    </state>
+  </widget>
+</style>
