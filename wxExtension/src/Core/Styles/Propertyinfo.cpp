@@ -29,6 +29,41 @@ PropertyInfo::PropertyInfo() : PropertyInfo("", PropertyType::String, "") { }
 PropertyInfo::PropertyInfo(const wxString& name, PropertyType type, const valueVariant& value) :
 	_name(name), _type(type), _value(value) { }
 
+std::optional<int> PropertyInfo::getIntValue() const {
+	if (!isIntValue()) {
+		return std::nullopt;
+	}
+	return std::get<int>(_value);
+}
+
+std::optional<double> PropertyInfo::getDoubleValue() const {
+	if (!isDoubleValue()) {
+		return std::nullopt;
+	}
+	return std::get<double>(_value);
+}
+
+std::optional<bool> PropertyInfo::getBoolValue() const {
+	if (isBoolValue()) {
+		return std::nullopt;
+	}
+	return std::get<bool>(_value);
+}
+
+std::optional<wxColour> PropertyInfo::getColorValue() const {
+	if (isColorValue()) {
+		return std::nullopt;
+	}
+	return std::get<wxColour>(_value);
+}
+
+std::optional<wxString> PropertyInfo::getStringValue() const{
+	if (isStringValue()) {
+		return std::nullopt;
+	}
+	return std::get<wxString>(_value);
+}
+
 PropertyInfo PropertyInfo::parse(const pugi::xml_node& propNode) {
 	wxString name = propNode.attribute("name").as_string();
 	wxString rawType = propNode.attribute("type").as_string();
