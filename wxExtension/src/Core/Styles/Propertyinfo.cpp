@@ -19,9 +19,9 @@ const std::map<wxString, PropertyType> PropertyInfo::_nameToTypeMap = {
 const std::map<wxString, PropertyType> PropertyInfo::_typeStringToTypeMap = {
 	{ "int", PropertyType::Int },
 	{ "double", PropertyType::Double },
+	{ "bool", PropertyType::Bool },
 	{ "color", PropertyType::Color },
-	{ "string", PropertyType::String },
-	{ "other", PropertyType::Other }
+	{ "string", PropertyType::String }
 };
 
 PropertyInfo::PropertyInfo() : PropertyInfo("", PropertyType::String, "") { }
@@ -76,13 +76,18 @@ PropertyInfo PropertyInfo::parse(const wxString& name, const wxString& rawType, 
 	PropertyType type;
 	type = rawType.IsEmpty() ? parseTypeFromName(name) : parseType(rawType);
 
-	if (type == PropertyType::Other) {
-		type = parseTypeFromName(rawValue);
-	}
-
 	std::optional<valueVariant> value = parseValue(type, rawValue);
 	return value.has_value() ? PropertyInfo(name, type, value.value()) : 
 		PropertyInfo(name, type, "");
+}
+
+std::optional<PropertyInfo> PropertyInfo::merge(const PropertyInfo& baseProp, const PropertyInfo& overrideProp) {
+	if (baseProp.getName() != overrideProp.getName() || 
+		baseProp.getType() != overrideProp.getType()) {
+		return std::nullopt;
+	}
+
+	return overrideProp;
 }
 
 PropertyType PropertyInfo::parseType(const wxString& rawType) {
@@ -112,9 +117,6 @@ std::optional<valueVariant> PropertyInfo::parseValue(PropertyType type, const wx
 		break;
 	}
 	case PropertyType::String:
-		value = rawValue;
-		break;
-	case PropertyType::Other:
 		value = rawValue;
 		break;
 	default:

@@ -139,6 +139,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="src\Core\Styles\PropertyCollection.cpp" />
     <ClCompile Include="src\Core\Styles\Propertyinfo.cpp" />
     <ClCompile Include="src\App.cpp" />
     <ClCompile Include="src\UI\Windows\MainWindow.cpp" />
@@ -152,6 +153,7 @@
     <ClInclude Include="include\StyleLoader.h" />
     <ClInclude Include="include\StyleManager.h" />
     <ClInclude Include="include\PropertyInfo.h" />
+    <ClInclude Include="include\PropertyCollection.h" />
   </ItemGroup>
   <ItemGroup>
     <Xml Include="styles1.xml" />

@@ -15,7 +15,7 @@ enum class PropertyType {
 	Bool,
 	Color,
 	String,
-	Other
+	None
 };
 
 using valueVariant = std::variant<
@@ -38,13 +38,14 @@ public:
 	const PropertyType& getType() const { return _type; }
 	void setType(const PropertyType& type) { _type = type; }
 
+	void setValue(const valueVariant& value) { _value = value; }
+	const valueVariant& getValue() const { return _value; }
+
 	std::optional<int> getIntValue() const;
 	std::optional<double> getDoubleValue() const;
 	std::optional<bool> getBoolValue() const;
 	std::optional<wxColour> getColorValue() const;
 	std::optional<wxString> getStringValue() const;
-
-	void setValue(const valueVariant& value) { _value = value; }
 
 	bool isIntValue() const { return _type == PropertyType::Int; }
 	bool isDoubleValue() const { return _type == PropertyType::Double; }
@@ -52,8 +53,14 @@ public:
 	bool isColorValue() const { return _type == PropertyType::Color; }
 	bool isStringValue() const { return _type == PropertyType::String; }
 
+	bool operator==(const PropertyInfo& other) const { return _name == other._name; }
+	PropertyInfo clone() const { return PropertyInfo(_name, _type, _value); }
+	bool isValid() const { return !_name.IsEmpty() && _type != PropertyType::None; }
+
 	static PropertyInfo parse(const pugi::xml_node& propNode);
 	static PropertyInfo parse(const wxString& name, const wxString& rawType, const wxString& rawValue);
+
+	static std::optional<PropertyInfo> merge(const PropertyInfo& baseProp, const PropertyInfo & overrideProp);
 
 private:
 	wxString _name;
