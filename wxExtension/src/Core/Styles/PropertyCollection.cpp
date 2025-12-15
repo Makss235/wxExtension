@@ -1,7 +1,7 @@
 #include "PropertyCollection.h"
 
 void PropertyCollection::addProperty(const PropertyInfo& prop) {
-	if (hasProperty(prop.getName()))
+	if (!hasProperty(prop.getName()))
 		_properties[prop.getName()] = prop;
 }
 
@@ -83,4 +83,15 @@ PropertyCollection PropertyCollection::merge(const PropertyCollection& base, con
 	}
 
 	return result;
+}
+
+PropertyCollection PropertyCollection::parse(const pugi::xml_node& node) {
+	auto propNodes = node.children("set");
+
+	PropertyCollection props;
+	for (auto propNode : propNodes) {
+		props.addProperty(PropertyInfo::parse(propNode));
+	}
+
+	return props;
 }

@@ -1,7 +1,7 @@
 #pragma once
 
 #include <map>
-#include <wx/wx.h>
+#include <wx/colour.h>
 
 #include <PropertyInfo.h>
 
@@ -19,7 +19,7 @@ public:
 	int getInt(const wxString& name, int defaultValue = 0) const;
 	double getDouble(const wxString& name, double defaultValue = 0.0) const;
 	bool getBool(const wxString& name, bool defaultValue = false) const;
-	wxColour getColor(const wxString& name, const wxColour& defaultValue = *wxBLACK) const;
+	wxColour getColor(const wxString& name, const wxColour& defaultValue = wxColour(0, 0, 0)) const;
 	wxString getString(const wxString& name, const wxString& defaultValue = wxEmptyString) const;
 
 	size_t count() const { return _properties.size(); }
@@ -29,6 +29,8 @@ public:
     void merge(const PropertyCollection& other);
     static PropertyCollection merge(const PropertyCollection& base,
         const PropertyCollection & override);
+
+	static PropertyCollection parse(const pugi::xml_node& node);
 
 private:
 	std::map<wxString, PropertyInfo> _properties;
