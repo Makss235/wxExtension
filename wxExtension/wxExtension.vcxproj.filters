@@ -36,6 +36,9 @@
     <ClCompile Include="src\Core\Styles\PropertyCollection.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
+    <ClCompile Include="src\Core\Styles\StateProperties.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\App.h">
@@ -54,6 +57,9 @@
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
     <ClInclude Include="include\PropertyCollection.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="include\StateProperties.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
   </ItemGroup>
