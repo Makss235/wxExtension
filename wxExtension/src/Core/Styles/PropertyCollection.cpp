@@ -1,13 +1,13 @@
 #include "PropertyCollection.h"
 
 void PropertyCollection::addProperty(const PropertyInfo& prop) {
-	if (!hasProperty(prop.getName()))
-		_properties[prop.getName()] = prop;
+	_properties[prop.getName()] = prop;
 }
 
 void PropertyCollection::removeProperty(const wxString& name) {
-	if (hasProperty(name))
+	if (hasProperty(name)) {
 		_properties.erase(name);
+	}
 }
 
 bool PropertyCollection::hasProperty(const wxString& name) const {
@@ -17,7 +17,9 @@ bool PropertyCollection::hasProperty(const wxString& name) const {
 std::optional<PropertyInfo> PropertyCollection::getProperty(const wxString& name) const {
 	if (hasProperty(name))
 		return _properties.at(name);
-	else return std::nullopt;
+	else {
+		return std::nullopt;
+	}
 }
 
 int PropertyCollection::getInt(const wxString& name, int defaultValue) const {
@@ -26,7 +28,9 @@ int PropertyCollection::getInt(const wxString& name, int defaultValue) const {
 		std::optional<int> val = prop.value().getIntValue();
 		return val.has_value() ? val.value() : defaultValue;
 	}
-	else return defaultValue;
+	else {
+		return defaultValue;
+	}
 }
 
 double PropertyCollection::getDouble(const wxString& name, double defaultValue) const {
@@ -35,7 +39,9 @@ double PropertyCollection::getDouble(const wxString& name, double defaultValue) 
 		std::optional<double> val = prop.value().getDoubleValue();
 		return val.has_value() ? val.value() : defaultValue;
 	}
-	else return defaultValue;
+	else {
+		return defaultValue;
+	}
 }
 
 bool PropertyCollection::getBool(const wxString& name, bool defaultValue) const {
@@ -44,7 +50,9 @@ bool PropertyCollection::getBool(const wxString& name, bool defaultValue) const 
 		std::optional<bool> val = prop.value().getBoolValue();
 		return val.has_value() ? val.value() : defaultValue;
 	}
-	else return defaultValue;
+	else {
+		return defaultValue;
+	}
 }
 
 wxColour PropertyCollection::getColor(const wxString& name, const wxColour& defaultValue) const {
@@ -53,7 +61,9 @@ wxColour PropertyCollection::getColor(const wxString& name, const wxColour& defa
 		std::optional<wxColour> val = prop.value().getColorValue();
 		return val.has_value() ? val.value() : defaultValue;
 	}
-	else return defaultValue;
+	else {
+		return defaultValue;
+	}
 }
 
 wxString PropertyCollection::getString(const wxString& name, const wxString& defaultValue) const {
@@ -62,7 +72,9 @@ wxString PropertyCollection::getString(const wxString& name, const wxString& def
 		std::optional<wxString> val = prop.value().getStringValue();
 		return val.has_value() ? val.value() : defaultValue;
 	}
-	else return defaultValue;
+	else {
+		return defaultValue;
+	}
 }
 
 void PropertyCollection::merge(const PropertyCollection& other) {
@@ -71,14 +83,13 @@ void PropertyCollection::merge(const PropertyCollection& other) {
 	}
 }
 
-PropertyCollection PropertyCollection::merge(const PropertyCollection& base, const PropertyCollection & override) {
+PropertyCollection PropertyCollection::merge(const PropertyCollection& baseProps, const PropertyCollection& overrideProps) {
 	PropertyCollection result;
-
-	for (const auto& [name, prop] : base._properties) {
+	for (const auto& [name, prop] : baseProps._properties) {
 		result._properties[name] = prop;
 	}
 
-	for (const auto& [name, prop] : override._properties) {
+	for (const auto& [name, prop] : overrideProps._properties) {
 		result._properties[name] = prop;
 	}
 

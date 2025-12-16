@@ -1,5 +1,6 @@
 #include "StyleLoader.h"
 #include <PropertyCollection.h>
+#include <WidgetStyleInfo.h>
 
 void StyleLoader::loadStylesheetFromFile(wxString filePath) {
 	/*std::vector<StyleInfo*>* styles = new std::vector<StyleInfo*>();*/
@@ -15,6 +16,6 @@ void StyleLoader::loadStylesheetFromFile(wxString filePath) {
 
     return styles;*/
 
-	auto hh = xmlDoc.child("properties");
-	auto pp = PropertyCollection::parse(hh);
+	auto hh = xmlDoc.child("style");
+	auto pp = WidgetStyleInfo::parse(hh);
 }

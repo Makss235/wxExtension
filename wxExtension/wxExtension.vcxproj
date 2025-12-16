@@ -147,6 +147,7 @@
     <ClCompile Include="src\Core\StyleManager.cpp" />
     <ClCompile Include="src\Core\StyleLoader.cpp" />
     <ClCompile Include="src\Core\Styles\StateProperties.cpp" />
+    <ClCompile Include="src\Core\Styles\WidgetStyleInfo.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\App.h" />
@@ -156,6 +157,7 @@
     <ClInclude Include="include\PropertyInfo.h" />
     <ClInclude Include="include\PropertyCollection.h" />
     <ClInclude Include="include\StateProperties.h" />
+    <ClInclude Include="include\WidgetStyleInfo.h" />
   </ItemGroup>
   <ItemGroup>
     <Xml Include="styles1.xml" />

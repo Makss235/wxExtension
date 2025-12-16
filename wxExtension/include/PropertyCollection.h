@@ -27,8 +27,8 @@ public:
 	void clear() { _properties.clear(); }
 
     void merge(const PropertyCollection& other);
-    static PropertyCollection merge(const PropertyCollection& base,
-        const PropertyCollection & override);
+    static PropertyCollection merge(const PropertyCollection& baseProps,
+        const PropertyCollection& overrideProps);
 
 	static PropertyCollection parse(const pugi::xml_node& node);
 
