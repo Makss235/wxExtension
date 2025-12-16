@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<style selector="wxButton" id="default-button">
+    <properties>
+        <set name="background-color" value="var(--primary-color)"/>
+        <set name="font-family" value="Segoe UI"/>
+        <set name="font-size" value="14"/>
+        <set name="font-weight" value="normal"/>
+        <set name="border-width" value="1"/>
+        <set name="border-color" value="#005A9E"/>
+        <set name="border-style" value="solid"/>
+        <set name="border-radius" value="3"/>
+        <set name="padding" value="8"/>
+        <set name="margin" value="4"/>
+        <set name="min-width" value="80"/>
+        <set name="min-height" value="32"/>
+    </properties>
+    
+    <state name="hover">
+        <set name="background-color" value="#106EBE"/>
+        <set name="border-color" value="#004578"/>
+    </state>
+    
+    <state name="active">
+        <set name="background-color" value="#005A9E"/>
+    </state>
+    
+    <state name="disabled">
+        <set name="background-color" value="#CCCCCC"/>
+    </state>
+</style>

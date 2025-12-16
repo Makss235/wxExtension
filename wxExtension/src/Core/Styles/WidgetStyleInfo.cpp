@@ -57,11 +57,8 @@ void WidgetStyleInfo::merge(const WidgetStyleInfo& other) {
 WidgetStyleInfo WidgetStyleInfo::merge(const WidgetStyleInfo& baseStyle, const WidgetStyleInfo& overrideStyle) {
     WidgetStyleInfo result;
 
-    result._widgetType = overrideStyle._widgetType.IsEmpty()
-        ? baseStyle._widgetType : overrideStyle._widgetType;
-
-    result._styleId = overrideStyle._styleId.IsEmpty()
-        ? baseStyle._styleId : overrideStyle._styleId;
+    result._widgetType = overrideStyle._widgetType.IsEmpty() ? baseStyle._widgetType : overrideStyle._widgetType;
+    result._styleId = overrideStyle._styleId.IsEmpty() ? baseStyle._styleId : overrideStyle._styleId;
 
     PropertyCollection mergedNormalProps;
 

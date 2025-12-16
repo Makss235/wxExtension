@@ -2,13 +2,12 @@
 <style selector="wxButton" id="custom-button">
     <properties>
         <set name="background-color" value="#0078D4"/>
-        <set name="color" value="#FFFFFF"/>
         <set name="font-size" value="14"/>
         <set name="padding" value="8"/>
     </properties>
     
     <state name="hover">
-        <set name="background-color" value="#106EBE"/>
+        <set name="background-color" value="#FF0000"/>
         <set name="border-width" value="2"/>
     </state>
 </style>

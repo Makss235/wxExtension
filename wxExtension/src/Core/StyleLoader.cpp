@@ -18,4 +18,15 @@ void StyleLoader::loadStylesheetFromFile(wxString filePath) {
 
 	auto hh = xmlDoc.child("style");
 	auto pp = WidgetStyleInfo::parse(hh);
+
+
+
+	pugi::xml_document xmlDoc1;
+	pugi::xml_parse_result result1 = xmlDoc1.load_file("def_styles1.xml");
+
+	auto hh1 = xmlDoc1.child("style");
+	auto pp1 = WidgetStyleInfo::parse(hh1);
+
+	auto hhhh = WidgetStyleInfo::merge(pp1, pp);
+
 }

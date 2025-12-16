@@ -15,8 +15,9 @@ bool PropertyCollection::hasProperty(const wxString& name) const {
 }
 
 std::optional<PropertyInfo> PropertyCollection::getProperty(const wxString& name) const {
-	if (hasProperty(name))
+	if (hasProperty(name)) {
 		return _properties.at(name);
+	}
 	else {
 		return std::nullopt;
 	}
