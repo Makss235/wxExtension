@@ -67,7 +67,7 @@ WidgetStyleInfo WidgetStyleInfo::merge(const WidgetStyleInfo& baseStyle, const W
         mergedNormalProps = baseNormalProps.value();
     }
 
-    std::optional<PropertyCollection> overrideNormalProps = baseStyle.getStateProperties(WidgetState::Normal);
+    std::optional<PropertyCollection> overrideNormalProps = overrideStyle.getStateProperties(WidgetState::Normal);
     if (overrideNormalProps.has_value()) {
         mergedNormalProps.merge(overrideNormalProps.value());
     }
@@ -94,7 +94,7 @@ WidgetStyleInfo WidgetStyleInfo::merge(const WidgetStyleInfo& baseStyle, const W
             stateProps.merge(baseStateProps.value());
         }
 
-        std::optional<PropertyCollection> overrideStateProps = baseStyle.getStateProperties(state);
+        std::optional<PropertyCollection> overrideStateProps = overrideStyle.getStateProperties(state);
         auto overrideIt = overrideStyle._stateProperties.find(state);
         if (overrideStateProps.has_value()) {
             stateProps.merge(overrideStateProps.value());

@@ -27,9 +27,6 @@
     <ClCompile Include="src\Core\StyleManager.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="src\Core\StyleLoader.cpp">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
     <ClCompile Include="src\Core\Styles\Propertyinfo.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
@@ -59,9 +56,6 @@
     <ClInclude Include="include\StyleManager.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="include\StyleLoader.h">
-      <Filter>Файлы заголовков</Filter>
-    </ClInclude>
     <ClInclude Include="include\PropertyCollection.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
@@ -74,8 +68,5 @@
     <ClInclude Include="include\StyleSheetInfo.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-  </ItemGroup>
-  <ItemGroup>
-    <Xml Include="styles1.xml" />
   </ItemGroup>
 </Project>

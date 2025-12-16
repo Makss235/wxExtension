@@ -7,7 +7,7 @@
 #include <string>
 
 bool App::OnInit() {
-	StyleManager::get()->initStyles();
+	StyleManager::get()->initDefaultStyle();
 
     InitializeComponent();
 

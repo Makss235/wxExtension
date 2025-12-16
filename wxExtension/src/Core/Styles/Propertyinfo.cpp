@@ -3,17 +3,48 @@
 const std::map<wxString, PropertyType> PropertyInfo::_nameToTypeMap = {
 	{ "background-color", PropertyType::Color },
 	{ "foreground-color", PropertyType::Color },
-	{ "font-family", PropertyType::String },
-	{ "font-size", PropertyType::Double },
-	{ "font-weight", PropertyType::String },
-	{ "border-width", PropertyType::Double },
+	{ "color", PropertyType::Color },
 	{ "border-color", PropertyType::Color },
+	{ "outline-color", PropertyType::Color },
+
+	{ "font-family", PropertyType::String },
+	{ "font-weight", PropertyType::String },
+	{ "font-style", PropertyType::String },
 	{ "border-style", PropertyType::String },
+	{ "text-align", PropertyType::String },
+	{ "cursor", PropertyType::String },
+
+	{ "font-size", PropertyType::Double },
+	{ "border-width", PropertyType::Double },
 	{ "border-radius", PropertyType::Double },
+	{ "border-radius-top-left", PropertyType::Double },
+	{ "border-radius-top-right", PropertyType::Double },
+	{ "border-radius-bottom-left", PropertyType::Double },
+	{ "border-radius-bottom-right", PropertyType::Double },
 	{ "padding", PropertyType::Double },
+	{ "padding-left", PropertyType::Double },
+	{ "padding-top", PropertyType::Double },
+	{ "padding-right", PropertyType::Double },
+	{ "padding-bottom", PropertyType::Double },
 	{ "margin", PropertyType::Double },
+	{ "margin-left", PropertyType::Double },
+	{ "margin-top", PropertyType::Double },
+	{ "margin-right", PropertyType::Double },
+	{ "margin-bottom", PropertyType::Double },
 	{ "min-width", PropertyType::Double },
-	{ "min-height", PropertyType::Double }
+	{ "min-height", PropertyType::Double },
+	{ "max-width", PropertyType::Double },
+	{ "max-height", PropertyType::Double },
+	{ "width", PropertyType::Double },
+	{ "height", PropertyType::Double },
+	{ "opacity", PropertyType::Double },
+	{ "outline-width", PropertyType::Double },
+	{ "outline-offset", PropertyType::Double },
+
+	{ "z-index", PropertyType::Int },
+
+	{ "visible", PropertyType::Bool },
+	{ "enabled", PropertyType::Bool }
 };
 
 const std::map<wxString, PropertyType> PropertyInfo::_typeStringToTypeMap = {
@@ -44,21 +75,21 @@ std::optional<double> PropertyInfo::getDoubleValue() const {
 }
 
 std::optional<bool> PropertyInfo::getBoolValue() const {
-	if (isBoolValue()) {
+	if (!isBoolValue()) {
 		return std::nullopt;
 	}
 	return std::get<bool>(_value);
 }
 
 std::optional<wxColour> PropertyInfo::getColorValue() const {
-	if (isColorValue()) {
+	if (!isColorValue()) {
 		return std::nullopt;
 	}
 	return std::get<wxColour>(_value);
 }
 
 std::optional<wxString> PropertyInfo::getStringValue() const{
-	if (isStringValue()) {
+	if (!isStringValue()) {
 		return std::nullopt;
 	}
 	return std::get<wxString>(_value);

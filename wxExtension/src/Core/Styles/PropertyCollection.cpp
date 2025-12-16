@@ -24,58 +24,48 @@ std::optional<PropertyInfo> PropertyCollection::getProperty(const wxString& name
 }
 
 int PropertyCollection::getInt(const wxString& name, int defaultValue) const {
-	std::optional<PropertyInfo> prop = getProperty(name);
-	if (prop.has_value()) {
-		std::optional<int> val = prop.value().getIntValue();
+	auto it = _properties.find(name);
+	if (it != _properties.end()) {
+		auto val = it->second.getIntValue();
 		return val.has_value() ? val.value() : defaultValue;
 	}
-	else {
-		return defaultValue;
-	}
+	return defaultValue;
 }
 
 double PropertyCollection::getDouble(const wxString& name, double defaultValue) const {
-	std::optional<PropertyInfo> prop = getProperty(name);
-	if (prop.has_value()) {
-		std::optional<double> val = prop.value().getDoubleValue();
+	auto it = _properties.find(name);
+	if (it != _properties.end()) {
+		auto val = it->second.getDoubleValue();
 		return val.has_value() ? val.value() : defaultValue;
 	}
-	else {
-		return defaultValue;
-	}
+	return defaultValue;
 }
 
 bool PropertyCollection::getBool(const wxString& name, bool defaultValue) const {
-	std::optional<PropertyInfo> prop = getProperty(name);
-	if (prop.has_value()) {
-		std::optional<bool> val = prop.value().getBoolValue();
+	auto it = _properties.find(name);
+	if (it != _properties.end()) {
+		auto val = it->second.getBoolValue();
 		return val.has_value() ? val.value() : defaultValue;
 	}
-	else {
-		return defaultValue;
-	}
+	return defaultValue;
 }
 
 wxColour PropertyCollection::getColor(const wxString& name, const wxColour& defaultValue) const {
-	std::optional<PropertyInfo> prop = getProperty(name);
-	if (prop.has_value()) {
-		std::optional<wxColour> val = prop.value().getColorValue();
+	auto it = _properties.find(name);
+	if (it != _properties.end()) {
+		auto val = it->second.getColorValue();
 		return val.has_value() ? val.value() : defaultValue;
 	}
-	else {
-		return defaultValue;
-	}
+	return defaultValue;
 }
 
 wxString PropertyCollection::getString(const wxString& name, const wxString& defaultValue) const {
-	std::optional<PropertyInfo> prop = getProperty(name);
-	if (prop.has_value()) {
-		std::optional<wxString> val = prop.value().getStringValue();
+	auto it = _properties.find(name);
+	if (it != _properties.end()) {
+		auto val = it->second.getStringValue();
 		return val.has_value() ? val.value() : defaultValue;
 	}
-	else {
-		return defaultValue;
-	}
+	return defaultValue;
 }
 
 void PropertyCollection::merge(const PropertyCollection& other) {

@@ -1,33 +1,244 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<style name="default">
-  <font name="main_font"></font>
+<stylesheet name="DefaultStyles">
+    <styles>
+        <style selector="wxButton" id="default-button">
+            <properties>
+                <set name="background-color" value="#0078D4"/>
+                <set name="foreground-color" value="#FFFFFF"/>
+                <set name="font-family" value="Segoe UI"/>
+                <set name="font-size" value="14"/>
+                <set name="font-weight" value="normal"/>
+                <set name="font-style" value="normal"/>
+                <set name="border-width" value="1"/>
+                <set name="border-color" value="#005A9E"/>
+                <set name="border-style" value="solid"/>
+                <set name="border-radius" value="4"/>
+                <set name="padding" value="8"/>
+                <set name="padding-left" value="16"/>
+                <set name="padding-top" value="8"/>
+                <set name="padding-right" value="16"/>
+                <set name="padding-bottom" value="8"/>
+                <set name="margin" value="4"/>
+                <set name="min-width" value="80"/>
+                <set name="min-height" value="32"/>
+                <set name="text-align" value="center"/>
+                <set name="cursor" value="pointer"/>
+                <set name="opacity" value="1.0"/>
+                <set name="enabled" value="true"/>
+                <set name="visible" value="true"/>
+            </properties>
+            
+            <state name="hover">
+                <set name="background-color" value="#106EBE"/>
+                <set name="border-color" value="#004578"/>
+            </state>
+            
+            <state name="active">
+                <set name="background-color" value="#005A9E"/>
+                <set name="border-color" value="#003D6B"/>
+            </state>
+            
+            <state name="disabled">
+                <set name="background-color" value="#CCCCCC"/>
+                <set name="foreground-color" value="#666666"/>
+                <set name="border-color" value="#AAAAAA"/>
+                <set name="cursor" value="not-allowed"/>
+                <set name="opacity" value="0.6"/>
+                <set name="enabled" value="false"/>
+            </state>
+            
+            <state name="focus">
+                <set name="outline-color" value="#000000"/>
+                <set name="outline-width" value="2"/>
+                <set name="outline-offset" value="2"/>
+            </state>
+        </style>
 
-  <widget type="button" name="some_button">
-    <part type="border" name="body">
-      <state name="normal">
-        <set type="colour" property="background_colour" value="@common_background_colour"/>
-        <set type="colour" property="foreground_colour" value="@common_foreground_colour"/>
-        <set type="colour" property="border_colour" value="@common_background_colour"/>
-        <set type="corner_radius" property="corner_radius" value="5"/>
-        <set type="thickness" property="border_thickness" value="1"/>
-        <set type="font" property="font" value="@main_font"/>
-      </state>
-      <state name="mouse_enter">
-        <set type="colour" property="background_colour" value="@mouse_enter_colour"/>
-        <set type="colour" property="foreground_colour" value="@common_foreground_colour"/>
-        <set type="colour" property="border_colour" value="@common_background_colour"/>
-        <set type="corner_radius" property="corner_radius" value="5"/>
-        <set type="thickness" property="border_thickness" value="1"/>
-        <set type="font" property="font" value="@main_font"/>
-      </state>
-      <state name="mouse_down">
-        <set type="colour" property="background_colour" value="@mouse_down_colour"/>
-        <set type="colour" property="foreground_colour" value="@common_foreground_colour"/>
-        <set type="colour" property="border_colour" value="@common_background_colour"/>
-        <set type="corner_radius" property="corner_radius" value="5"/>
-        <set type="thickness" property="border_thickness" value="1"/>
-        <set type="font" property="font" value="@main_font"/>
-      </state>
-    </part>
-  </widget>
-</style>
+
+        <style selector="wxTextCtrl" id="default-textctrl">
+            <properties>
+                <set name="background-color" value="#FFFFFF"/>
+                <set name="foreground-color" value="#000000"/>
+                <set name="font-family" value="Segoe UI"/>
+                <set name="font-size" value="14"/>
+                <set name="font-weight" value="normal"/>
+                <set name="border-width" value="1"/>
+                <set name="border-color" value="#8A8A8A"/>
+                <set name="border-style" value="solid"/>
+                <set name="border-radius" value="2"/>
+                <set name="padding" value="6"/>
+                <set name="padding-left" value="8"/>
+                <set name="padding-top" value="6"/>
+                <set name="padding-right" value="8"/>
+                <set name="padding-bottom" value="6"/>
+                <set name="min-height" value="28"/>
+                <set name="opacity" value="1.0"/>
+                <set name="enabled" value="true"/>
+            </properties>
+            
+            <state name="focus">
+                <set name="border-color" value="#0078D4"/>
+                <set name="border-width" value="2"/>
+            </state>
+            
+            <state name="hover">
+                <set name="border-color" value="#0078D4"/>
+            </state>
+            
+            <state name="disabled">
+                <set name="background-color" value="#F0F0F0"/>
+                <set name="foreground-color" value="#A0A0A0"/>
+                <set name="border-color" value="#D0D0D0"/>
+                <set name="enabled" value="false"/>
+            </state>
+        </style>
+        
+        
+        <style selector="wxPanel" id="default-panel">
+            <properties>
+                <set name="background-color" value="#FFFFFF"/>
+                <set name="border-width" value="1"/>
+                <set name="border-color" value="#E0E0E0"/>
+                <set name="border-style" value="solid"/>
+                <set name="border-radius" value="8"/>
+                <set name="padding" value="12"/>
+                <set name="opacity" value="1.0"/>
+            </properties>
+        </style>
+        
+        
+        <style selector="wxCheckBox" id="default-checkbox">
+            <properties>
+                <set name="background-color" value="#FFFFFF"/>
+                <set name="foreground-color" value="#000000"/>
+                <set name="font-family" value="Segoe UI"/>
+                <set name="font-size" value="14"/>
+                <set name="border-width" value="1"/>
+                <set name="border-color" value="#8A8A8A"/>
+                <set name="border-style" value="solid"/>
+                <set name="border-radius" value="2"/>
+                <set name="enabled" value="true"/>
+            </properties>
+            
+            <state name="checked">
+                <set name="background-color" value="#0078D4"/>
+                <set name="border-color" value="#0078D4"/>
+            </state>
+            
+            <state name="hover">
+                <set name="border-color" value="#0078D4"/>
+            </state>
+            
+            <state name="disabled">
+                <set name="background-color" value="#F0F0F0"/>
+                <set name="foreground-color" value="#A0A0A0"/>
+                <set name="border-color" value="#D0D0D0"/>
+                <set name="enabled" value="false"/>
+            </state>
+        </style>
+        
+        
+        <style selector="wxRadioButton" id="default-radiobutton">
+            <properties>
+                <set name="background-color" value="#FFFFFF"/>
+                <set name="foreground-color" value="#000000"/>
+                <set name="font-family" value="Segoe UI"/>
+                <set name="font-size" value="14"/>
+                <set name="border-width" value="1"/>
+                <set name="border-color" value="#8A8A8A"/>
+                <set name="border-style" value="solid"/>
+                <set name="border-radius" value="10"/>
+                <set name="enabled" value="true"/>
+            </properties>
+            
+            <state name="checked">
+                <set name="border-color" value="#0078D4"/>
+            </state>
+            
+            <state name="hover">
+                <set name="border-color" value="#0078D4"/>
+            </state>
+            
+            <state name="disabled">
+                <set name="background-color" value="#F0F0F0"/>
+                <set name="foreground-color" value="#A0A0A0"/>
+                <set name="border-color" value="#D0D0D0"/>
+                <set name="enabled" value="false"/>
+            </state>
+        </style>
+        
+        
+        <style selector="wxStaticText" id="default-statictext">
+            <properties>
+                <set name="background-color" value="transparent"/>
+                <set name="foreground-color" value="#000000"/>
+                <set name="font-family" value="Segoe UI"/>
+                <set name="font-size" value="14"/>
+                <set name="font-weight" value="normal"/>
+                <set name="text-align" value="left"/>
+            </properties>
+            
+            <state name="disabled">
+                <set name="foreground-color" value="#A0A0A0"/>
+            </state>
+        </style>
+        
+        
+        <style selector="wxComboBox" id="default-combobox">
+            <properties>
+                <set name="background-color" value="#FFFFFF"/>
+                <set name="foreground-color" value="#000000"/>
+                <set name="font-family" value="Segoe UI"/>
+                <set name="font-size" value="14"/>
+                <set name="border-width" value="1"/>
+                <set name="border-color" value="#8A8A8A"/>
+                <set name="border-style" value="solid"/>
+                <set name="border-radius" value="2"/>
+                <set name="padding-left" value="8"/>
+                <set name="padding-right" value="8"/>
+                <set name="min-height" value="28"/>
+                <set name="min-width" value="120"/>
+            </properties>
+            
+            <state name="focus">
+                <set name="border-color" value="#0078D4"/>
+                <set name="border-width" value="2"/>
+            </state>
+            
+            <state name="hover">
+                <set name="border-color" value="#0078D4"/>
+            </state>
+            
+            <state name="disabled">
+                <set name="background-color" value="#F0F0F0"/>
+                <set name="foreground-color" value="#A0A0A0"/>
+                <set name="border-color" value="#D0D0D0"/>
+            </state>
+        </style>
+        
+        
+        <style selector="wxListBox" id="default-listbox">
+            <properties>
+                <set name="background-color" value="#FFFFFF"/>
+                <set name="foreground-color" value="#000000"/>
+                <set name="font-family" value="Segoe UI"/>
+                <set name="font-size" value="14"/>
+                <set name="border-width" value="1"/>
+                <set name="border-color" value="#8A8A8A"/>
+                <set name="border-style" value="solid"/>
+                <set name="border-radius" value="2"/>
+                <set name="padding" value="4"/>
+            </properties>
+            
+            <state name="focus">
+                <set name="border-color" value="#0078D4"/>
+            </state>
+            
+            <state name="disabled">
+                <set name="background-color" value="#F0F0F0"/>
+                <set name="foreground-color" value="#A0A0A0"/>
+            </state>
+        </style>
+        
+    </styles>
+</stylesheet>

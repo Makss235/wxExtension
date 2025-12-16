@@ -145,7 +145,6 @@
     <ClCompile Include="src\UI\Windows\MainWindow.cpp" />
     <ClCompile Include="src\main.cpp" />
     <ClCompile Include="src\Core\StyleManager.cpp" />
-    <ClCompile Include="src\Core\StyleLoader.cpp" />
     <ClCompile Include="src\Core\Styles\StateProperties.cpp" />
     <ClCompile Include="src\Core\Styles\WidgetStyleInfo.cpp" />
     <ClCompile Include="src\Core\Styles\StyleSheetInfo.cpp" />
@@ -153,16 +152,12 @@
   <ItemGroup>
     <ClInclude Include="include\App.h" />
     <ClInclude Include="include\MainWindow.h" />
-    <ClInclude Include="include\StyleLoader.h" />
     <ClInclude Include="include\StyleManager.h" />
     <ClInclude Include="include\PropertyInfo.h" />
     <ClInclude Include="include\PropertyCollection.h" />
     <ClInclude Include="include\StateProperties.h" />
     <ClInclude Include="include\WidgetStyleInfo.h" />
     <ClInclude Include="include\StyleSheetInfo.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <Xml Include="styles1.xml" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

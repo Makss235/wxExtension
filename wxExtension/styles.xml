@@ -1,21 +1,124 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<style name="default">
-  <font name="mainFont">
-    <set property="fontWeight" value="MEDIUM"/>
-	<set property="fontSize" value="12"/>
-  </font>
-
-  <widget type="button" name="stdButton">
-    <state name="normal">
-      <element type="border" name="body">
-        <set type="cornerRadius" property="cornerRadius" value="5"/>
-        <set type="thickness" property="borderThickness" value="0"/>
-        <set type="font" property="font">
-          <font>
-            <set property="fontWeight" value="ExtraBOLD"/>
-          </font>
-        </set>
-      </element>
-    </state>
-  </widget>
-</style>
+<stylesheet name="UserCustomStyles" version="1.0">
+    <styles>
+        <style selector="wxButton" id="accent-button">
+            <properties>
+                <set name="background-color" value="#FF5722"/>
+                <set name="border-color" value="#E64A19"/>
+                <set name="border-radius" value="10"/>
+            </properties>
+            
+            <state name="hover">
+                <set name="background-color" value="#E64A19"/>
+                <set name="border-color" value="#D84315"/>
+            </state>
+            
+            <state name="active">
+                <set name="background-color" value="#D84315"/>
+            </state>
+        </style>
+        
+        
+        <style selector="wxButton" id="icon-button">
+            <properties>
+                <set name="background-color" value="transparent"/>
+                <set name="border-width" value="0"/>
+                <set name="border-radius" value="20"/>
+                <set name="padding" value="8"/>
+                <set name="min-width" value="40"/>
+                <set name="min-height" value="40"/>
+            </properties>
+            
+            <state name="hover">
+                <set name="background-color" value="#E5E5E5"/>
+            </state>
+            
+            <state name="active">
+                <set name="background-color" value="#D0D0D0"/>
+            </state>
+        </style>
+        
+        
+        <style selector="wxButton" id="custom-corners-button">
+            <properties>
+                <set name="background-color" value="#4CAF50"/>
+                <set name="foreground-color" value="#FFFFFF"/>
+                <set name="border-radius-top-left" value="2"/>
+                <set name="border-radius-top-right" value="8"/>
+                <set name="border-radius-bottom-left" value="8"/>
+                <set name="border-radius-bottom-right" value="5"/>
+                <set name="padding-left" value="20"/>
+                <set name="padding-right" value="20"/>
+            </properties>
+            
+            <state name="hover">
+                <set name="background-color" value="#45A049"/>
+            </state>
+        </style>
+        
+        
+        <style selector="wxButton" id="flat-button">
+            <properties>
+                <set name="background-color" value="transparent"/>
+                <set name="foreground-color" value="#0078D4"/>
+                <set name="border-width" value="0"/>
+                <set name="padding-left" value="16"/>
+                <set name="padding-right" value="16"/>
+            </properties>
+            
+            <state name="hover">
+                <set name="background-color" value="#F0F0F0"/>
+            </state>
+            
+            <state name="active">
+                <set name="background-color" value="#E0E0E0"/>
+            </state>
+        </style>
+        
+        
+        <style selector="wxTextCtrl" id="dark-textctrl">
+            <properties>
+                <set name="background-color" value="#2C2C2C"/>
+                <set name="foreground-color" value="#FFFFFF"/>
+                <set name="border-color" value="#404040"/>
+                <set name="border-radius" value="4"/>
+            </properties>
+            
+            <state name="focus">
+                <set name="border-color" value="#0078D4"/>
+            </state>
+        </style>
+        
+        
+        <style selector="wxTextCtrl" id="error-textctrl">
+            <properties>
+                <set name="border-color" value="#D32F2F"/>
+                <set name="border-width" value="2"/>
+            </properties>
+            
+            <state name="focus">
+                <set name="border-color" value="#D32F2F"/>
+            </state>
+        </style>
+        
+        
+        <style selector="wxPanel" id="card-panel">
+            <properties>
+                <set name="background-color" value="#FFFFFF"/>
+                <set name="border-radius" value="12"/>
+                <set name="padding" value="16"/>
+                <set name="border-width" value="0"/>
+            </properties>
+        </style>
+        
+        
+        <style selector="wxPanel" id="dark-panel">
+            <properties>
+                <set name="background-color" value="#1E1E1E"/>
+                <set name="border-color" value="#3C3C3C"/>
+                <set name="border-radius" value="8"/>
+            </properties>
+        </style>
+        
+    </styles>
+</stylesheet>

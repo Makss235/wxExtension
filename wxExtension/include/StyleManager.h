@@ -1,21 +1,29 @@
 #pragma once
+#define _CRT_SECURE_NO_WARNINGS
 
-#include <wx/wx.h>
 #include <vector>
+#include <wx/wx.h>
+
+#include <StyleSheetInfo.h>
 
 class StyleManager {
 public:
-	std::vector<wxString> stylesheetFilePaths;
+	std::vector<wxString> styleSheetFilePaths;
 
 	static StyleManager* get();
 
-	void initStyles();
+	void initDefaultStyle();
+	void initUserStyles();
 
 private:
-	static StyleManager* _instance;
-
-	//std::vector<StyleInfo*>* _styleInfos;
-
 	StyleManager();
+	~StyleManager();
+
+	wxString _defStyleSheetFileName;
+
+	std::unique_ptr<StyleSheetInfo> _defaultStyleSheet;
+	std::vector<std::unique_ptr<StyleSheetInfo>> _userStyleSheets;
+
+	static StyleManager* _instance;
 };
 

@@ -1,7 +1,5 @@
 #include "StyleManager.h"
 
-#include <StyleLoader.h>
-
 StyleManager* StyleManager::_instance = nullptr;
 
 StyleManager* StyleManager::get() {
@@ -11,15 +9,28 @@ StyleManager* StyleManager::get() {
 	return _instance;
 }
 
-void StyleManager::initStyles() {
-	StyleLoader* loader = new StyleLoader();
+void StyleManager::initDefaultStyle() {
+	_defaultStyleSheet = std::make_unique<StyleSheetInfo>();
+	_defaultStyleSheet->loadFromFile(_defStyleSheetFileName);
+}
 
-	for (int i = 0; i < stylesheetFilePaths.size(); i++) {
-		loader->loadStylesheetFromFile(stylesheetFilePaths.at(i));
+void StyleManager::initUserStyles() {
+	for (const auto& path : styleSheetFilePaths) {
+		auto userSheet = std::make_unique<StyleSheetInfo>();
+		if (userSheet->loadFromFile(path)) {
+			_userStyleSheets.push_back(std::move(userSheet));
+		}
 	}
 }
 
 StyleManager::StyleManager() {
-	stylesheetFilePaths = std::vector<wxString>();
-	stylesheetFilePaths.push_back("styles1.xml");
+	_defStyleSheetFileName = "default_style.xml";
+	styleSheetFilePaths.push_back("styles.xml");
+
+	initDefaultStyle();
+	initUserStyles();
+}
+
+StyleManager::~StyleManager() {
+	delete _instance;
 }

@@ -54,7 +54,7 @@ bool StyleSheetInfo::parseXML(const pugi::xml_document& doc) {
 
     _name = root.attribute("name").as_string();
 
-    pugi::xml_node stylesNode = root.child("Styles");
+    pugi::xml_node stylesNode = root.child("styles");
     if (stylesNode) {
         parseStyles(stylesNode);
     }
@@ -63,7 +63,7 @@ bool StyleSheetInfo::parseXML(const pugi::xml_document& doc) {
 }
 
 void StyleSheetInfo::parseStyles(const pugi::xml_node& node) {
-    for (pugi::xml_node styleNode : node.children("Style")) {
+    for (pugi::xml_node styleNode : node.children("style")) {
         WidgetStyleInfo style = WidgetStyleInfo::parse(styleNode);
 
         wxString styleId = style.getStyleId();
