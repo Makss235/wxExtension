@@ -139,6 +139,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="src\Core\GraphicsUtils.cpp" />
     <ClCompile Include="src\Core\Styles\PropertyCollection.cpp" />
     <ClCompile Include="src\Core\Styles\Propertyinfo.cpp" />
     <ClCompile Include="src\App.cpp" />
@@ -151,6 +152,7 @@
     <ClCompile Include="src\UI\Widgets\Base\sWidgetBase.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="include\GraphicsUtils.h" />
     <ClInclude Include="include\App.h" />
     <ClInclude Include="include\MainWindow.h" />
     <ClInclude Include="include\StyleManager.h" />
@@ -160,6 +162,7 @@
     <ClInclude Include="include\WidgetStyleInfo.h" />
     <ClInclude Include="include\StyleSheetInfo.h" />
     <ClInclude Include="include\sWidgetBase.h" />
+    <ClInclude Include="include\Structs.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
