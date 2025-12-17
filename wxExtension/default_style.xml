@@ -5,21 +5,32 @@
             <properties>
                 <set name="background-color" value="#0078D4"/>
                 <set name="foreground-color" value="#FFFFFF"/>
+                <set name="border-color" value="#005A9E"/>
+
                 <set name="font-family" value="Segoe UI"/>
                 <set name="font-size" value="10"/>
                 <set name="font-weight" value="normal"/>
                 <set name="font-style" value="normal"/>
-                <set name="border-width" value="5, 8"/>
-                <set name="border-color" value="#005A9E"/>
-                <set name="border-style" value="solid"/>
-                <set name="border-radius" value="20, 10, 20, 10"/>
+
+                <set name="border-radius" value="4"/>
+                <set name="border-width" value="2"/>
                 <set name="padding" value="8"/>
                 <set name="margin" value="4"/>
-                <set name="min-width" value="80"/>
-                <set name="min-height" value="32"/>
+
+                <set name="border-style" value="solid"/>
                 <set name="text-align" value="center"/>
                 <set name="cursor" value="pointer"/>
+                
+                <set name="min-width" value="80"/>
+                <set name="min-height" value="32"/>
+                <set name="max-width" value="200"/>
+                <set name="max-height" value="200"/>
+                <set name="width" value="100"/>
+                <set name="height" value="50"/>
+                
                 <set name="opacity" value="1.0"/>
+                <set name="z-index" value="1"/>
+
                 <set name="enabled" value="true"/>
                 <set name="visible" value="true"/>
             </properties>

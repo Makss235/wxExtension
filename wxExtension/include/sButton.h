@@ -24,6 +24,8 @@ public:
     virtual ~sButton() = default;
 
 protected:
+	virtual void applyStateProperties() override;
+
     void OnPaint(wxPaintEvent& evt);
     void OnMouseEnter(wxMouseEvent& evt);
     void OnMouseLeave(wxMouseEvent& evt);

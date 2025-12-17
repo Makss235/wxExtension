@@ -6,28 +6,28 @@ const std::map<wxString, PropertyType> PropertyInfo::_nameToTypeMap = {
 	{ "border-color", PropertyType::Color },
 	{ "outline-color", PropertyType::Color },
 
+	{ "font-size", PropertyType::Double },
 	{ "font-family", PropertyType::String },
 	{ "font-weight", PropertyType::String },
 	{ "font-style", PropertyType::String },
+
 	{ "border-style", PropertyType::String },
 	{ "text-align", PropertyType::String },
 	{ "cursor", PropertyType::String },
 
-	{ "font-size", PropertyType::Double },
-	{ "border-width", PropertyType::Thickness },
 	{ "border-radius", PropertyType::CornerRadius },
+	{ "border-width", PropertyType::Thickness },
 	{ "padding", PropertyType::Thickness },
 	{ "margin", PropertyType::Thickness },
+
 	{ "min-width", PropertyType::Double },
 	{ "min-height", PropertyType::Double },
 	{ "max-width", PropertyType::Double },
 	{ "max-height", PropertyType::Double },
 	{ "width", PropertyType::Double },
 	{ "height", PropertyType::Double },
-	{ "opacity", PropertyType::Double },
-	{ "outline-width", PropertyType::Double },
-	{ "outline-offset", PropertyType::Double },
 
+	{ "opacity", PropertyType::Double },
 	{ "z-index", PropertyType::Int },
 
 	{ "visible", PropertyType::Bool },

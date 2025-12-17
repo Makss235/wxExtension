@@ -8,6 +8,14 @@ sButton::sButton(wxWindow* parent, wxWindowID id, const wxString& label,
 	SetBackgroundStyle(wxBG_STYLE_PAINT);
 }
 
+void sButton::applyStateProperties() {
+	sWidgetBase::applyStateProperties();
+
+	SetMinSize(wxSize(getMinWidth(), GetMinHeight()));
+	SetMaxSize(wxSize(getMaxWidth(), GetMaxHeight()));
+	SetSize(wxSize(getWidth(), getHeight()));
+}
+
 void sButton::OnPaint(wxPaintEvent& evt) {
 	wxAutoBufferedPaintDC dc(this);
 	dc.Clear();
@@ -65,12 +73,8 @@ void sButton::Render(wxAutoBufferedPaintDC& dc) {
     const wxFont& font = getFont();
 
     wxColour parentBg = GetParent() ? GetParent()->GetBackgroundColour() : *wxWHITE;
-    GraphicsUtils::drawRoundedRect(
-        gc, 0, 0, size.x, size.y,
-        corners, borders,
-        bgColor, borderColor,
-        parentBg
-    );
+    GraphicsUtils::drawRoundedRect(gc, 0, 0, size.x, size.y,
+        corners, borders, bgColor, borderColor, parentBg);
 
     delete gc;
 
@@ -80,12 +84,9 @@ void sButton::Render(wxAutoBufferedPaintDC& dc) {
     wxString label = GetLabel();
     wxSize textSize = dc.GetTextExtent(label);
 
-    wxRect contentRect(
-        static_cast<int>(padding.left),
-        static_cast<int>(padding.top),
+    wxRect contentRect(static_cast<int>(padding.left), static_cast<int>(padding.top),
         size.x - static_cast<int>(padding.left + padding.right),
-        size.y - static_cast<int>(padding.top + padding.bottom)
-    );
+        size.y - static_cast<int>(padding.top + padding.bottom));
 
     wxString align = getTextAlign();
     int textX = contentRect.x;
