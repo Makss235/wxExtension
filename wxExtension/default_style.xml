@@ -9,10 +9,10 @@
                 <set name="font-size" value="10"/>
                 <set name="font-weight" value="normal"/>
                 <set name="font-style" value="normal"/>
-                <set name="border-width" value="1, 2"/>
+                <set name="border-width" value="5, 8"/>
                 <set name="border-color" value="#005A9E"/>
                 <set name="border-style" value="solid"/>
-                <set name="border-radius" value="4"/>
+                <set name="border-radius" value="20, 10, 20, 10"/>
                 <set name="padding" value="8"/>
                 <set name="margin" value="4"/>
                 <set name="min-width" value="80"/>

@@ -33,21 +33,9 @@ public:
     double getOpacity() const { return m_opacity; }
     wxString getTextAlign() const { return m_textAlign; }
 
-
-    wxColour getBackgroundColourForState(WidgetState state) const;
-    wxColour getForegroundColourForState(WidgetState state) const;
-    wxColour getBorderColourForState(WidgetState state) const;
-    CornerRadius getCornerRadiusForState(WidgetState state) const;
-    Thickness getBorderThicknessForState(WidgetState state) const;
-
 protected:
     virtual void applyStateProperties();
-
     void updatePropertiesFromCollection(const PropertyCollection& props);
-
-    CornerRadius extractCornerRadius(const PropertyCollection& props) const;
-    Thickness extractBorderThickness(const PropertyCollection& props) const;
-    Thickness extractPadding(const PropertyCollection& props) const;
     wxFont extractFont(const PropertyCollection& props) const;
 
 

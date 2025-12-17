@@ -19,8 +19,10 @@ public:
 	int getInt(const wxString& name, int defaultValue = 0) const;
 	double getDouble(const wxString& name, double defaultValue = 0.0) const;
 	bool getBool(const wxString& name, bool defaultValue = false) const;
-	wxColour getColor(const wxString& name, const wxColour& defaultValue = wxColour(0, 0, 0)) const;
 	wxString getString(const wxString& name, const wxString& defaultValue = wxEmptyString) const;
+	wxColour getColor(const wxString& name, const wxColour& defaultValue = wxColour(0, 0, 0)) const;
+	CornerRadius getCornerRadius(const wxString& name, const CornerRadius& defaultValue = CornerRadius(0.0)) const;
+	Thickness getThickness(const wxString& name, const Thickness& defaultValue = Thickness(0.0)) const;
 
 	size_t count() const { return _properties.size(); }
 	bool isEmpty() const { return _properties.empty(); }

@@ -15,8 +15,9 @@ bool PropertyCollection::hasProperty(const wxString& name) const {
 }
 
 std::optional<PropertyInfo> PropertyCollection::getProperty(const wxString& name) const {
-	if (hasProperty(name)) {
-		return _properties.at(name);
+	auto it = _properties.find(name);
+	if (it != _properties.end()) {
+		return it->second;
 	}
 	else {
 		return std::nullopt;
@@ -50,6 +51,15 @@ bool PropertyCollection::getBool(const wxString& name, bool defaultValue) const 
 	return defaultValue;
 }
 
+wxString PropertyCollection::getString(const wxString& name, const wxString& defaultValue) const {
+	auto it = _properties.find(name);
+	if (it != _properties.end()) {
+		auto val = it->second.getStringValue();
+		return val.has_value() ? val.value() : defaultValue;
+	}
+	return defaultValue;
+}
+
 wxColour PropertyCollection::getColor(const wxString& name, const wxColour& defaultValue) const {
 	auto it = _properties.find(name);
 	if (it != _properties.end()) {
@@ -59,10 +69,19 @@ wxColour PropertyCollection::getColor(const wxString& name, const wxColour& defa
 	return defaultValue;
 }
 
-wxString PropertyCollection::getString(const wxString& name, const wxString& defaultValue) const {
+CornerRadius PropertyCollection::getCornerRadius(const wxString& name, const CornerRadius& defaultValue) const {
 	auto it = _properties.find(name);
 	if (it != _properties.end()) {
-		auto val = it->second.getStringValue();
+		auto val = it->second.getCornerRadiusValue();
+		return val.has_value() ? val.value() : defaultValue;
+	}
+	return defaultValue;
+}
+
+Thickness PropertyCollection::getThickness(const wxString& name, const Thickness& defaultValue) const {
+	auto it = _properties.find(name);
+	if (it != _properties.end()) {
+		auto val = it->second.getThicknessValue();
 		return val.has_value() ? val.value() : defaultValue;
 	}
 	return defaultValue;
