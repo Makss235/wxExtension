@@ -3,8 +3,9 @@
 #include <wx/window.h>
 #include <wx/colour.h>
 #include <wx/font.h>
-#include "WidgetStyleInfo.h"
-#include "PropertyCollection.h"
+
+#include <WidgetStyleInfo.h>
+#include <PropertyCollection.h>
 #include <Structs.h>
 
 class sWidgetBase {

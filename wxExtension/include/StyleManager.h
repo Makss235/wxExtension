@@ -15,13 +15,15 @@ public:
 	void initDefaultStyle();
 	void initUserStyles();
 
+	std::unique_ptr<StyleSheetInfo> _defaultStyleSheet;
+
 private:
 	StyleManager();
 	~StyleManager();
 
 	wxString _defStyleSheetFileName;
 
-	std::unique_ptr<StyleSheetInfo> _defaultStyleSheet;
+	//std::unique_ptr<StyleSheetInfo> _defaultStyleSheet;
 	std::vector<std::unique_ptr<StyleSheetInfo>> _userStyleSheets;
 
 	static StyleManager* _instance;
