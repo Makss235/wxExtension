@@ -148,6 +148,7 @@
     <ClCompile Include="src\Core\Styles\StateProperties.cpp" />
     <ClCompile Include="src\Core\Styles\WidgetStyleInfo.cpp" />
     <ClCompile Include="src\Core\Styles\StyleSheetInfo.cpp" />
+    <ClCompile Include="src\UI\Widgets\Base\sWidgetBase.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\App.h" />
@@ -158,6 +159,7 @@
     <ClInclude Include="include\StateProperties.h" />
     <ClInclude Include="include\WidgetStyleInfo.h" />
     <ClInclude Include="include\StyleSheetInfo.h" />
+    <ClInclude Include="include\sWidgetBase.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -143,7 +143,7 @@ std::optional<valueVariant> PropertyInfo::parseValue(PropertyType type, const wx
 		value = std::stod(rawValue.ToStdString());
 		break;
 	case PropertyType::Color: {
-		wxColour color = wxColour();
+		wxColour color;
 		value = color.Set(rawValue) ? color : wxColour(0, 0, 0);
 		break;
 	}

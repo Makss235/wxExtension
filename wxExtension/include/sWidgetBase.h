@@ -1,0 +1,94 @@
+#pragma once
+
+#include <wx/window.h>
+#include <wx/colour.h>
+#include <wx/font.h>
+#include "WidgetStyleInfo.h"
+#include "PropertyCollection.h"
+
+struct CornerRadius {
+    double topLeft = 0.0;
+    double topRight = 0.0;
+    double bottomLeft = 0.0;
+    double bottomRight = 0.0;
+
+    CornerRadius() = default;
+    CornerRadius(double all) : topLeft(all), topRight(all),
+        bottomLeft(all), bottomRight(all) {}
+    CornerRadius(double tl, double tr, double bl, double br)
+        : topLeft(tl), topRight(tr), bottomLeft(bl), bottomRight(br) {}
+};
+
+struct Thickness {
+    double left = 0.0;
+    double top = 0.0;
+    double right = 0.0;
+    double bottom = 0.0;
+
+    Thickness() = default;
+    Thickness(double all) : left(all), top(all), right(all), bottom(all) {}
+    Thickness(double l, double t, double r, double b)
+        : left(l), top(t), right(r), bottom(b) {}
+};
+
+
+class sWidgetBase {
+public:
+    sWidgetBase(wxWindow* owner, const WidgetStyleInfo& styleInfo);
+    virtual ~sWidgetBase() = default;
+
+    void setStyle(const WidgetStyleInfo& styleInfo);
+    const WidgetStyleInfo& getStyle() const { return m_styleInfo; }
+
+    void setState(WidgetState state);
+    WidgetState getCurrentState() const { return m_currentState; }
+
+
+    const wxColour& getBackgroundColour() const { return m_backgroundColor; }
+    const wxColour& getForegroundColour() const { return m_foregroundColor; }
+    const wxColour& getBorderColour() const { return m_borderColor; }
+
+    const CornerRadius& getCornerRadius() const { return m_cornerRadius; }
+    const Thickness& getBorderThickness() const { return m_borderThickness; }
+    const Thickness& getPadding() const { return m_padding; }
+
+    const wxFont& getFont() const { return m_font; }
+
+    double getOpacity() const { return m_opacity; }
+    wxString getTextAlign() const { return m_textAlign; }
+
+
+    wxColour getBackgroundColourForState(WidgetState state) const;
+    wxColour getForegroundColourForState(WidgetState state) const;
+    wxColour getBorderColourForState(WidgetState state) const;
+    CornerRadius getCornerRadiusForState(WidgetState state) const;
+    Thickness getBorderThicknessForState(WidgetState state) const;
+
+protected:
+    virtual void applyStateProperties();
+
+    void updatePropertiesFromCollection(const PropertyCollection& props);
+
+    CornerRadius extractCornerRadius(const PropertyCollection& props) const;
+    Thickness extractBorderThickness(const PropertyCollection& props) const;
+    Thickness extractPadding(const PropertyCollection& props) const;
+    wxFont extractFont(const PropertyCollection& props) const;
+
+
+    wxWindow* m_owner;
+
+    WidgetStyleInfo m_styleInfo;
+    WidgetState m_currentState;
+
+    wxColour m_backgroundColor;
+    wxColour m_foregroundColor;
+    wxColour m_borderColor;
+    CornerRadius m_cornerRadius;
+    Thickness m_borderThickness;
+    Thickness m_padding;
+    wxFont m_font;
+    double m_opacity;
+    wxString m_textAlign;
+    wxString m_cursor;
+};
+
