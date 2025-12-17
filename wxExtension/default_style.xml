@@ -9,15 +9,11 @@
                 <set name="font-size" value="10"/>
                 <set name="font-weight" value="normal"/>
                 <set name="font-style" value="normal"/>
-                <set name="border-width" value="1"/>
+                <set name="border-width" value="1, 2"/>
                 <set name="border-color" value="#005A9E"/>
                 <set name="border-style" value="solid"/>
                 <set name="border-radius" value="4"/>
                 <set name="padding" value="8"/>
-                <set name="padding-left" value="16"/>
-                <set name="padding-top" value="8"/>
-                <set name="padding-right" value="16"/>
-                <set name="padding-bottom" value="8"/>
                 <set name="margin" value="4"/>
                 <set name="min-width" value="80"/>
                 <set name="min-height" value="32"/>
@@ -55,7 +51,7 @@
         </style>
 
 
-        <style selector="wxTextCtrl" id="default-textctrl">
+        <!-- <style selector="wxTextCtrl" id="default-textctrl">
             <properties>
                 <set name="background-color" value="#FFFFFF"/>
                 <set name="foreground-color" value="#000000"/>
@@ -238,7 +234,7 @@
                 <set name="background-color" value="#F0F0F0"/>
                 <set name="foreground-color" value="#A0A0A0"/>
             </state>
-        </style>
+        </style> -->
         
     </styles>
 </stylesheet>
