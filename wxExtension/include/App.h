@@ -2,8 +2,6 @@
 
 #include "wx/wx.h"
 
-
-
 class App : public wxApp {
 public:
 	virtual bool OnInit() override;
@@ -11,3 +9,4 @@ public:
 	void InitializeComponent();
 };
 
+wxIMPLEMENT_APP(App);

@@ -1,6 +1,7 @@
 #include "MainWindow.h"
 
 #include <sButton.h>
+#include <sTextCtrl.h>
 #include <StyleManager.h>
 
 MainWindow::MainWindow() :
@@ -11,11 +12,16 @@ MainWindow::MainWindow() :
 
 void MainWindow::InitializeComponent() {
 
-    wxPanel* panel = new wxPanel(this);
-    sButton* button = new sButton(panel, wxID_ANY, "Click me!", 
-        StyleManager::get()->_defaultStyleSheet->getStyle("default-button").value(), wxPoint(50, 50), wxSize(100, 100));
+    wxPanel* panel = new wxPanel(this, -1, wxPoint(50, 50));
+    sButton* button = new sButton(panel, wxID_ANY, "Click me!",
+        StyleManager::get()->defaultStyleSheet->getStyle("default-button").value(), wxPoint(50, 50));
 
-    /*button->Bind(wxEVT_BUTTON, [](wxCommandEvent& event) {
-        wxMessageBox("Hello from wxWidgets!");
-        });*/
+    sTextCtrl* text = new sTextCtrl(panel, wxID_ANY, "Click me!",
+        StyleManager::get()->defaultStyleSheet->getStyle("default-textctrl").value(), wxPoint(50, 50));
+
+	wxBoxSizer* sizer = new wxBoxSizer(wxVERTICAL);
+	sizer->Add(button);
+	sizer->Add(text);
+
+    panel->SetSizer(sizer);
 }

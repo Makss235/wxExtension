@@ -145,12 +145,12 @@
     <ClCompile Include="src\Core\Styles\Propertyinfo.cpp" />
     <ClCompile Include="src\App.cpp" />
     <ClCompile Include="src\UI\Windows\MainWindow.cpp" />
-    <ClCompile Include="src\main.cpp" />
     <ClCompile Include="src\Core\StyleManager.cpp" />
     <ClCompile Include="src\Core\Styles\StateProperties.cpp" />
     <ClCompile Include="src\Core\Styles\WidgetStyleInfo.cpp" />
     <ClCompile Include="src\Core\Styles\StyleSheetInfo.cpp" />
     <ClCompile Include="src\UI\Widgets\Base\sWidgetBase.cpp" />
+    <ClCompile Include="src\UI\Widgets\sTextCtrl.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\GraphicsUtils.h" />
@@ -165,6 +165,7 @@
     <ClInclude Include="include\sWidgetBase.h" />
     <ClInclude Include="include\Structs.h" />
     <ClInclude Include="include\sButton.h" />
+    <ClInclude Include="include\sTextCtrl.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

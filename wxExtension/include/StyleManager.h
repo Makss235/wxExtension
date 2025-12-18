@@ -9,13 +9,13 @@
 class StyleManager {
 public:
 	std::vector<wxString> styleSheetFilePaths;
+	std::unique_ptr<StyleSheetInfo> defaultStyleSheet;
+	std::vector<std::unique_ptr<StyleSheetInfo>> userStyleSheets;
 
 	static StyleManager* get();
 
 	void initDefaultStyle();
 	void initUserStyles();
-
-	std::unique_ptr<StyleSheetInfo> _defaultStyleSheet;
 
 private:
 	StyleManager();
@@ -23,8 +23,7 @@ private:
 
 	wxString _defStyleSheetFileName;
 
-	//std::unique_ptr<StyleSheetInfo> _defaultStyleSheet;
-	std::vector<std::unique_ptr<StyleSheetInfo>> _userStyleSheets;
+	
 
 	static StyleManager* _instance;
 };

@@ -10,15 +10,15 @@ StyleManager* StyleManager::get() {
 }
 
 void StyleManager::initDefaultStyle() {
-	_defaultStyleSheet = std::make_unique<StyleSheetInfo>();
-	_defaultStyleSheet->loadFromFile(_defStyleSheetFileName);
+	defaultStyleSheet = std::make_unique<StyleSheetInfo>();
+	defaultStyleSheet->loadFromFile(_defStyleSheetFileName);
 }
 
 void StyleManager::initUserStyles() {
 	for (const auto& path : styleSheetFilePaths) {
 		auto userSheet = std::make_unique<StyleSheetInfo>();
 		if (userSheet->loadFromFile(path)) {
-			_userStyleSheets.push_back(std::move(userSheet));
+			userStyleSheets.push_back(std::move(userSheet));
 		}
 	}
 }

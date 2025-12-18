@@ -62,25 +62,38 @@
         </style>
 
 
-        <!-- <style selector="wxTextCtrl" id="default-textctrl">
+        <style selector="wxTextCtrl" id="default-textctrl">
             <properties>
                 <set name="background-color" value="#FFFFFF"/>
                 <set name="foreground-color" value="#000000"/>
-                <set name="font-family" value="Segoe UI"/>
-                <set name="font-size" value="14"/>
-                <set name="font-weight" value="normal"/>
-                <set name="border-width" value="1"/>
                 <set name="border-color" value="#8A8A8A"/>
+
+                <set name="font-family" value="Segoe UI"/>
+                <set name="font-size" value="10"/>
+                <set name="font-weight" value="normal"/>
+                <set name="font-style" value="normal"/>
+
+                <set name="border-radius" value="4"/>
+                <set name="border-width" value="2"/>
+                <set name="padding" value="8"/>
+                <set name="margin" value="4"/>
+
                 <set name="border-style" value="solid"/>
-                <set name="border-radius" value="2"/>
-                <set name="padding" value="6"/>
-                <set name="padding-left" value="8"/>
-                <set name="padding-top" value="6"/>
-                <set name="padding-right" value="8"/>
-                <set name="padding-bottom" value="6"/>
-                <set name="min-height" value="28"/>
+                <set name="text-align" value="center"/>
+                <set name="cursor" value="text"/>
+                
+                <set name="min-width" value="80"/>
+                <set name="min-height" value="32"/>
+                <set name="max-width" value="200"/>
+                <set name="max-height" value="200"/>
+                <set name="width" value="100"/>
+                <set name="height" value="50"/>
+                
                 <set name="opacity" value="1.0"/>
+                <set name="z-index" value="1"/>
+
                 <set name="enabled" value="true"/>
+                <set name="visible" value="true"/>
             </properties>
             
             <state name="focus">
@@ -101,7 +114,7 @@
         </style>
         
         
-        <style selector="wxPanel" id="default-panel">
+        <!-- <style selector="wxPanel" id="default-panel">
             <properties>
                 <set name="background-color" value="#FFFFFF"/>
                 <set name="border-width" value="1"/>
